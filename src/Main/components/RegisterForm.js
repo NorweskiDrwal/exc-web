@@ -7,16 +7,17 @@ import './styles/RegisterForm.css';
 const registerForm = () => (
   <Card className="form__reg">
     <CardBody>
-      <CardTitle className="text-center">Register</CardTitle>
+      <CardTitle className="text-center">Register now. The world of excieties awaits!</CardTitle>
+      <hr />
       <CardText>
         <Form>
           <FormGroup>
             <Label for="email">Email</Label>
-            <Input type="email" name="email" id="email" placeholder="email" />
+            <Input type="email" name="email" id="email" placeholder="email" required />
           </FormGroup>
           <FormGroup>
             <Label for="password">Password</Label>
-            <Input type="password" name="password" id="password" placeholder="password" />
+            <Input type="password" name="password" id="password" placeholder="password" required />
           </FormGroup>
           <FormGroup check>
             <Label check>
@@ -24,7 +25,7 @@ const registerForm = () => (
               I agree with Terms & Conditions
             </Label>
           </FormGroup>
-          <Button block><i class="fa fa-user-circle" aria-hidden="true"></i><p>Register</p></Button>
+          <Button block>Register</Button>
         </Form>
         <hr />
         <CardTitle className="text-center">Or sign up with:</CardTitle>

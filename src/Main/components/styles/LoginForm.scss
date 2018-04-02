@@ -1,16 +1,21 @@
-@import '../../App.scss';
+@import '../../../App.scss';
 
 .form__log {
-  background: $blue;
+  background: $red;
   border: 10px solid $yellow;
   border-radius: 0.25rem;
-  padding: 10px;
+  padding: 6px 10px 10px;
   transform: scale(0.9);
 
+  .Col {
+    padding: 0 10px;
+  }
+  
   Button {
-		background: $pink;
+		background: $yellow;
 		border: none;
     color: $white;
     font-size: 17px;
+    Width: 100%;
   }
 }

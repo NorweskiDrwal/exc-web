@@ -1,7 +1,7 @@
-@import '../../App.scss';
+@import '../../../App.scss';
 
 .form__reg {
-	background: $blue;
+	background: $red;
 	border: 10px solid $yellow;
 	color: $yellow;
 	transform: scale(0.9);
@@ -9,7 +9,7 @@
 	input[type=checkbox] {transform: scale(1.5);}
   
 	Button {
-		background: $pink;
+		background: $yellow;
 		border: none;
 		color: $white;
 		font-size: 20px;

@@ -1,0 +1,27 @@
+@import '../../../App.scss';
+
+.cont__card {
+  background: transparent;
+  border: none;
+  text-align: center;
+
+  #cont__logo {
+    margin: 40px 0;
+    width: 80%;
+  }
+
+  .CardTitle {
+    color: $red;
+    font-size: 40px;
+    font-weight: 800;
+  }
+
+  .CardText {
+
+    font-size: 20px;
+
+    span {
+      color: $red;
+    }
+  }
+}

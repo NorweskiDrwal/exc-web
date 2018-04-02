@@ -1,0 +1,15 @@
+@import '../../App.scss';
+
+.ctrl__main {
+  background: $grey;
+  border: 10px solid $yellow;
+  height: 150px;
+  width: 150px;
+  text-align: center;
+
+  p {
+    color: $yellow;
+    font-size: 30px;
+    line-height: 130px;
+  }
+}

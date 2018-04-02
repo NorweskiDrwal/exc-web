@@ -11,7 +11,6 @@ import store, { history } from './store';
 
 // common components
 import Header from './common/Header';
-import Main from './common/Main';
 import Footer from './common/Footer';
 
 class App extends Component {
@@ -21,7 +20,7 @@ class App extends Component {
         <ConnectedRouter history={history}>
           <div className="App">
             <Header />
-            <Main routes={routes} />
+            {routes}
             <Footer />
           </div>
         </ConnectedRouter>

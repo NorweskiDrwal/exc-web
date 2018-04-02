@@ -1,11 +1,13 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
 import Loadable from 'react-loadable';
-import AppLoader from './common/components/AppLoader';
+import AppLoader from './common/AppLoader';
 
 // Import modules/routes
-import About from './about';
-import PageNotFound from './common/components/PageNotFound';
+import Main from './Main';
+import Profile from './Profile';
+import SetupProfile from './Profile/components/SetupProfile';
+import PageNotFound from './common/PageNotFound';
 
 // Code splitting with dynamic import
 // https://reactjs.org/docs/code-splitting.html
@@ -17,8 +19,9 @@ const Home = Loadable({
 
 export default (
 	<Switch>
-		<Route exact path="/" component={Home} />
-		<Route path="/about" component={About} />
-		<Route path="*" component={PageNotFound} />
+    <Route exact path="/" component={Main} />
+    <Route path="/profile" component={Profile} />  
+		<Route path="/profile/setup" component={SetupProfile} />
+    <Route path="*" component={PageNotFound} />
 	</Switch>
 );
