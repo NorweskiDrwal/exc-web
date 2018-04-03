@@ -7,7 +7,7 @@ import '../../style/Search.css';
 const search = ({ openSearch, searchSwitch }) => (
   <div className="search">
     <div className={"search__bar " + (openSearch && 'search__bar--open')}>
-      <input />
+      <input placeholder="Type in the searched phrase" />
     </div>
     <Button className="search__btn circle" color="warning" onClick={searchSwitch} >
       { !openSearch && (<i class="fa fa-search" aria-hidden="true" /> )}

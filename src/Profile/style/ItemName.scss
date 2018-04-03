@@ -1,0 +1,23 @@
+@import '../../App.scss';
+
+.item__name {
+  background: $yellow;
+  border: 4px solid $grey;
+  border-radius: 8px;
+  color: $grey;
+  font-size: 30px;
+  height: 44px;
+  line-height: 36px;
+  text-align: center;
+  overflow: hidden;
+  word-break: unset;
+  transition: all 0.2s ease-in;
+  width: 0px;
+  z-index: -1;
+}
+
+.item__name--show {
+  padding: 2px;
+  width: 156px;
+  z-index: 1;
+}

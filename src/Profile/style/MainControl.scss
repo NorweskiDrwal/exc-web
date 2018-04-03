@@ -8,14 +8,7 @@
 }
 
 .ctrl__main {
-  background: $grey;
+  background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../../assets/mati.jpg');
   height: 130px;
   width: 130px;
-  text-align: center;
-
-  p {
-    color: $yellow;
-    font-size: 30px;
-    line-height: 130px;
-  }
 }

@@ -10,7 +10,9 @@ class ProfileContainer extends Component {
     this.state = {
       openMenu: false,
       openBackdrop: false,
-      openSearch: false
+      openSearch: false,
+      openName: false,
+      itemName: 'settings'
     };
   };
 
@@ -56,6 +58,19 @@ class ProfileContainer extends Component {
     !this.state.openSearch ? this.openSearch() : this.closeSearch()
   }
 
+  openName = () => {
+    this.setState({ openName: true })
+  }
+
+  closeName = () => {
+    this.setState({ openName: false })
+  }
+
+  getItemName = () => {
+    this.setState({ itemName: this.state.itemName });
+    console.log(this.state.itemName);
+  }
+
   render() {
     return (
       <Fragment>
@@ -64,7 +79,12 @@ class ProfileContainer extends Component {
           closeMenu={this.closeMenu}
           open={this.state.openMenu} 
           backdrop={this.state.openBackdrop}
-          menuList={this.menuList} />
+          menuList={this.menuList} 
+          itemName={this.state.itemName}
+          getItemName={this.getItemName}
+          openName={this.openName}
+          closeName={this.closeName}
+          name={this.state.openName} />
         <Navigation       
           hamburgerSwitch={this.hamburgerSwitch}
           openSearch={this.state.openSearch}
