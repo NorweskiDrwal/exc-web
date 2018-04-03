@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button } from 'reactstrap';
 
-import '../style/Logout.css';
+import '../../style/Logout.css';
 
-const logout = (props) => (
+const logout = () => (
   <Button className="circle logout" color="danger">
     <i class="fa fa-power-off pin" aria-hidden="true"></i>
   </Button>

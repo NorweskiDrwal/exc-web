@@ -1,7 +1,72 @@
 @import '../../App.scss';
 
+
+@mixin populate-circle( 
+  $nb-items,
+  $circle-size,
+  $item-size
+) {
+  $half-item: ($item-size / 2);
+  $half-parent: ($circle-size / 2);
+  
+  position: relative; /* 1 */
+  width:  $circle-size;
+  height: $circle-size;
+  padding: 0;
+  border-radius: 50%;
+  box-sizing: content-box; /* 3 */ 
+  
+  > * { /* 4 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width:  $item-size;
+    height: $item-size;
+    margin: auto;
+  }
+  
+  $angle: (360 / $nb-items);
+  $rot: 0;
+
+  @for $i from 1 through $nb-items {
+      > :nth-of-type(#{$i}) {
+        transform: rotate($rot * 1deg) translate($half-parent) rotate($rot * -1deg);
+      }
+    $rot: ($rot + $angle);
+  }
+}
+
+.menu {
+  @include populate-circle(8, 80px, 22px);
+  position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+  margin: auto;
+  transition: all 0.3s ease;
+}
+
 .menu__item {
-  background: $yellow;
-  height: 45px;
-  width: 45px;
+  text-align: center;
+
+  .menu__item--in {
+    background: $yellow;
+    cursor: pointer;
+    height: inherit;
+    width: inherit;
+    transition: all 0.2s ease;
+
+    i {
+      color: $grey;
+      font-size: 13px;
+      }
+
+    &:hover {
+      transform: scale(1.3)
+    }
+    
+  }
 }
