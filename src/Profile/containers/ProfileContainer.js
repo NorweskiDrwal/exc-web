@@ -70,8 +70,8 @@ class ProfileContainer extends Component {
   }
 
   settingsBlocksDrawer = (name) => {
-    this.getItemNameBlocksDrawer(name);
-    this.openBlocksDrawer();
+    this.openModal();
+    this.openNavigationDrawer();
   }
 
   trophiesBlocksDrawer = (name) => {

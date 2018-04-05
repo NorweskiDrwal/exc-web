@@ -8,7 +8,7 @@ const navigationDrawer = ({
 }) => (
   <div className="navigation__drawer">
     <ul className="navigation__drawer--menu">
-      <li className="navigation__drawer--item"></li>
+      <li className="navigation__drawer--item"><span className="--welcome">Hi, Mateusz</span></li>
       {menuList.map(item => (
         <DrawerItem 
           {...item} 

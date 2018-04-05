@@ -1,13 +1,12 @@
 @import '../../App.scss';
 
 .item__name {
-  background: $yellow;
-  border: 4px solid $grey;
+  background: $red;
   border-radius: 8px;
-  color: $grey;
+  color: $white;
   font-size: 30px;
-  height: 44px;
-  line-height: 36px;
+  height: 40px;
+  line-height: 42px;
   text-align: center;
   overflow: hidden;
   word-break: unset;
@@ -18,6 +17,6 @@
 
 .item__name--show {
   padding: 2px;
-  width: 156px;
+  width: 150px;
   z-index: 1;
 }

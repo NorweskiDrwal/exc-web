@@ -53,14 +53,14 @@
   text-align: center;
 
   .menu__item--in {
-    background: $yellow;
+    background: $red;
     cursor: pointer;
     height: inherit;
     width: inherit;
     transition: all 0.2s ease;
 
     i {
-      color: $grey;
+      color: $white;
       font-size: 13px;
     }
 

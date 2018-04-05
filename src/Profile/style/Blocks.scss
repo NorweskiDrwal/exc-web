@@ -4,7 +4,8 @@
 
 .blocks__drawer {
   animation: slideInRight .3s ease;
-  background: $grey;
+  background: $grey-25;
+  border-left: 2px solid $red; 
   bottom: 0;
   // box-shadow: -2px 0px 10px 0px rgba(0,0,0,0.75); 
   overflow-x: auto;
@@ -15,7 +16,7 @@
   z-index: 95;
 
   i {
-    color: $grey;
+    color: $white;
     font-size: 20px;
     left: 15px;
     position: absolute;
@@ -23,21 +24,18 @@
     transition: all 0.3s ease;
 
     &:hover {
-      color: $blue;
       cursor: pointer;
       transform: scale(1.5);
     }
   }
 
   .blocks__title {
-    background: $yellow;
-    color: $grey;
-    font-size: 20px;
-    font-weight: 800;
-    line-height: 24px;
-    padding: 18px 0;
+    background: $red;
+    color: $white;
+    font-size: 25px;
+    line-height: 30px;
+    padding: 15px 0;
     text-align: center;
-    text-transform: uppercase;
   }
 }
 
