@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 
 import MainControl from '../components/MainControl';
 import Navigation from '../components/Navigation';
+import Modals from '../components/Modals';
+import Blocks from '../components/Blocks';
 
 class ProfileContainer extends Component {
   constructor(props) {
@@ -10,22 +12,72 @@ class ProfileContainer extends Component {
     this.state = {
       openMenu: false,
       openBackdrop: false,
+      openModal: false,
+      openNavigationDrawer: false,
+      openBlocksDrawer: false,
       openSearch: false,
       openName: false,
-      itemName: 'settings'
+      itemName: '',
+      itemDrawerName: ''
     };
   };
 
   menuList = [
-    {name: 'chat', icon: 'fa-comments'},
-    {name: 'trophies', icon: 'fa-trophy'},
-    {name: 'settings', icon: 'fa-cog'},
-    {name: 'challenges', icon: 'fa-handshake-o'},
-    {name: 'check-in', icon: 'fa-comments'},
-    {name: 'ranks', icon: 'fa-cubes'},
-    {name: 'spots', icon: 'fa-map-marker'},
-    {name: 'friends', icon: 'fa-users'}
+    {name: 'chat',        icon: 'fa-comments'},
+    {name: 'trophies',    icon: 'fa-trophy'},
+    {name: 'settings',    icon: 'fa-cog'},
+    {name: 'challenges',  icon: 'fa-handshake-o'},
+    {name: 'check-in',    icon: 'fa-thumb-tack'},
+    {name: 'ranks',       icon: 'fa-cubes'},
+    {name: 'spots',       icon: 'fa-map-marker'},
+    {name: 'friends',     icon: 'fa-users'}
   ];
+
+  openModal = () => { this.setState({ openModal: true })};
+
+  openNavigationDrawer = () => { this.setState({ openNavigationDrawer: true, openBackdrop: true })};
+  openBlocksDrawer = () => { this.setState({ openBlocksDrawer: true })};
+
+  challengesBlocksDrawer = (name) => {
+    this.getItemNameBlocksDrawer(name);
+    this.openBlocksDrawer();
+
+  }
+
+  spotsBlocksDrawer = (name) => {
+    this.getItemNameBlocksDrawer(name);
+    this.openBlocksDrawer();
+  }
+
+  chatBlocksDrawer = (name) => {
+    this.getItemNameBlocksDrawer(name);
+    this.openBlocksDrawer();
+  }
+  
+  friendsBlocksDrawer = (name) => {
+    this.getItemNameBlocksDrawer(name);
+    this.openBlocksDrawer();
+  }
+
+  ranksBlocksDrawer = (name) => {
+    this.getItemNameBlocksDrawer(name);
+    this.openBlocksDrawer();
+  }
+
+  checkBlocksDrawer = (name) => {
+    this.getItemNameBlocksDrawer(name);
+    this.openBlocksDrawer();
+  }
+
+  settingsBlocksDrawer = (name) => {
+    this.getItemNameBlocksDrawer(name);
+    this.openBlocksDrawer();
+  }
+
+  trophiesBlocksDrawer = (name) => {
+    this.getItemNameBlocksDrawer(name);
+    this.openBlocksDrawer();
+  }
 
   openMenu = () => {
     this.setState({
@@ -38,37 +90,62 @@ class ProfileContainer extends Component {
     this.setState({
       openMenu: false,
       openBackdrop: false,
-      openSearch: false
+      openSearch: false,
+      openModal: false,
+      openNavigationDrawer: false
     })
   }
 
-  hamburgerSwitch = () => {
-    !this.state.openMenu ? this.openMenu() : this.closeMenu()
+  closeModal = () => { this.closeMenu(); };
+  closeBlocksDrawer = () => { this.setState({ openBlocksDrawer: false }) };
+  closeSearch = () => { this.setState({ openSearch: false }) };
+  closeName = () => { this.setState({ openName: false }) };
+
+  hamburgerSwitch = () => { !this.state.openNavigationDrawer ? this.openNavigationDrawer() : this.closeMenu() };
+
+  openSearch = () => { this.setState({ openSearch: true }) };
+
+  searchSwitch = () => { !this.state.openSearch ? this.openSearch() : this.closeSearch() };
+
+  openName = () => { this.setState({ openName: true }) };  
+
+  getItemNameProfile = (name) => {
+    this.setState({
+      openName: true,
+      itemName: name
+    })
   }
 
-  openSearch = () => {
-    this.setState({ openSearch: true })
+  getItemNameNavigationDrawer = (name) => {
+    this.setState({ itemName: name });
+    this.openModal();
   }
 
-  closeSearch = () => {
-    this.setState({ openSearch: false })
+  getItemNameBlocksDrawer = (name) => {
+    this.setState({ itemDrawerName: name });
   }
 
-  searchSwitch = () => {
-    !this.state.openSearch ? this.openSearch() : this.closeSearch()
-  }
-
-  openName = () => {
-    this.setState({ openName: true })
-  }
-
-  closeName = () => {
-    this.setState({ openName: false })
-  }
-
-  getItemName = () => {
-    this.setState({ itemName: this.state.itemName });
-    console.log(this.state.itemName);
+  assignFuncToName = (name) => {
+    switch(name) {
+      case 'chat':
+        return this.chatBlocksDrawer(name);
+      case 'settings':
+        return this.settingsBlocksDrawer(name);
+      case 'trophies':
+        return this.trophiesBlocksDrawer(name);
+      case 'challenges':
+        return this.challengesBlocksDrawer(name);
+      case 'check-in':
+        return this.checkBlocksDrawer(name);
+      case 'spots':
+        return this.spotsBlocksDrawer(name);
+      case 'ranks':
+        return this.ranksBlocksDrawer(name);
+      case 'friends':
+        return this.friendsBlocksDrawer(name);
+      default:
+        return null;
+    }
   }
 
   render() {
@@ -77,19 +154,32 @@ class ProfileContainer extends Component {
         <MainControl 
           openMenu={this.openMenu} 
           closeMenu={this.closeMenu}
-          open={this.state.openMenu} 
+          open={this.state.openMenu}
           backdrop={this.state.openBackdrop}
           menuList={this.menuList} 
           itemName={this.state.itemName}
-          getItemName={this.getItemName}
           openName={this.openName}
           closeName={this.closeName}
-          name={this.state.openName} />
+          getItemName={this.getItemNameProfile}
+          name={this.state.openName}
+          assignFuncToName={this.assignFuncToName} />
         <Navigation       
           hamburgerSwitch={this.hamburgerSwitch}
+          openModal={this.state.openModal} 
           openSearch={this.state.openSearch}
+          openDrawer={this.state.openNavigationDrawer}
+          menuList={this.menuList}
           searchSwitch={this.searchSwitch}
-          open={this.state.openMenu} />
+          getItemName={this.getItemNameNavigationDrawer}
+          assignFuncToName={this.assignFuncToName} />
+        <Modals
+          closeModal={this.closeModal} 
+          openModal={this.state.openModal}
+          itemName={this.state.itemName} />
+        <Blocks 
+          openDrawer={this.state.openBlocksDrawer}
+          itemName={this.state.itemDrawerName}
+          closeBlocksDrawer={this.closeBlocksDrawer} />
       </Fragment>
     )
   };

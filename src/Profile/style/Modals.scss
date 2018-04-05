@@ -1,0 +1,32 @@
+@import '../../App.scss';
+
+.veil {
+  background: rgba(0,0,0,0.7);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  animation: slideDown .2s ease;
+  z-index: 90;
+}
+
+.modal__body {
+  position: absolute;
+  width: auto;
+  background: $white;
+  max-width: 500px;
+  height: 80%;
+  z-index: 100;
+}
+
+@-webkit-keyframes slideDown {
+  0% { -webkit-opacity: 0; }
+  100% { -webkit-opacity: 1; }
+}
+
+@keyframes slideDown {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

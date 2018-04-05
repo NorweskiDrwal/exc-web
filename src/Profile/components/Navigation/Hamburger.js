@@ -1,12 +1,10 @@
 import React from 'react';
 import { Button } from 'reactstrap';
 
-import '../../style/Hamburger.css';
-
-const hamburger = ({ hamburgerSwitch, open }) => (
-  <Button className="circle hamburger" color="secondary" onClick={hamburgerSwitch}>
-    { !open && (<i class="fa fa-bars" aria-hidden="true" /> )}
-    { open && (<i class="fa fa-times" aria-hidden="true" /> )}
+const hamburger = ({ hamburgerSwitch, openDrawer }) => (
+  <Button className="circle hamburger" color="warning" onClick={hamburgerSwitch} >
+    { !openDrawer && (<i className="fa fa-bars" aria-hidden="true" /> )}
+    { openDrawer && (<i className="fa fa-times" aria-hidden="true" /> )}
   </Button>
 );
 

@@ -1,0 +1,52 @@
+@import '../../App.scss';
+
+/* BLOCKS DRAWER */
+
+.blocks__drawer {
+  animation: slideInRight .3s ease;
+  background: $grey;
+  bottom: 0;
+  // box-shadow: -2px 0px 10px 0px rgba(0,0,0,0.75); 
+  overflow-x: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 290px;
+  z-index: 95;
+
+  i {
+    color: $grey;
+    font-size: 20px;
+    left: 15px;
+    position: absolute;
+    top: 20px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $blue;
+      cursor: pointer;
+      transform: scale(1.5);
+    }
+  }
+
+  .blocks__title {
+    background: $yellow;
+    color: $grey;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 24px;
+    padding: 18px 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+@-webkit-keyframes slideInRight {
+  0% { -webkit-right: -250px; }
+  100% { -webkit-right: 0; }
+}
+
+@keyframes slideInRight {
+  0% { right: -250px; }
+  100% { right: 0; }
+}

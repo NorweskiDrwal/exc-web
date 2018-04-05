@@ -1,0 +1,147 @@
+@import '../../App.scss';
+
+/* HAMBURGER */
+
+.hamburger {
+  background: $blue;
+  border: 4px solid $yellow;
+  color: $white;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  padding: 0;
+  top: 10px;
+  left: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  z-index: 100;
+
+  i::before {line-height: 31px; font-size: 24px;}
+  
+  &:hover {transform: scale(1.3); }
+}
+
+/* LOGOUT */
+
+.logout {
+  background: $pink;
+  border: 4px solid $red;
+  color: $white;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  padding: 0;
+  bottom: 10px;
+  left: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  z-index: 100;
+
+  i::before {line-height: 33px; font-size: 28px;}
+  
+  &:hover {transform: scale(1.3); color: $yellow;}
+}
+
+/* SEARCH */
+
+.search {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 100;
+
+  .search__bar {
+    background: $pink;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    height: inherit;
+    position: absolute;
+    padding: 5px;
+    right: 20px;
+    width: 5px;
+    z-index: -1;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    input {border-radius: inherit; border: none; height: 30px; padding-left: 10px; width: 240px;}
+  }
+
+  .search__bar--open {width: 250px;}
+
+  .search__btn {
+    background: $grey;
+    border: 4px solid $pink;
+    color: $white;
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    text-align: center;
+    transition: all 0.3s ease;
+    z-index: 1;
+
+    i::before {line-height: 27px; font-size: 24px; z-index: 2;}
+    
+    &:hover {transform: scale(1.3); color: $yellow;}
+  }
+}
+
+/* NAVIGATION DRAWER */
+
+.navigation__drawer {
+  animation: slideInLeft .3s ease;
+  background: $yellow;  
+  bottom: 0;
+  // box-shadow: 2px 0px 10px 0px rgba(0,0,0,0.75); 
+  overflow-x: auto;
+  position: absolute;
+  top: 0;
+  width: 250px;
+  z-index: 95;
+
+  .navigation__drawer--menu {
+    color: $red;
+
+    :first-child {
+      background: $blue;
+      height: 60px;
+    }
+
+    .navigation__drawer--item {
+      cursor: pointer;
+      font-size: 20px;
+      padding: 10px 0;
+      position: relative;
+
+      i {
+        background: $blue;
+        color: $white;
+        border-radius: 50%;
+        height: 32px;
+        width: 32px;
+        position: absolute;
+        left: 14px;
+        text-align: center;
+        line-height: 30px;
+      }
+
+      span {padding-left: 60px;}
+
+      &:hover:not(:first-child) {
+        background: $grey;
+        color: $white;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes slideInLeft {
+  0% { -webkit-left: -250px; }
+  100% { -webkit-left: 0; }
+}
+
+@keyframes slideInLeft {
+  0% { left: -250px; }
+  100% { left: 0; }
+}

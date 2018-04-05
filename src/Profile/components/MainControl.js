@@ -6,7 +6,19 @@ import MainMenu from '../components/MainMenu';
 import ItemName from '../components/ItemName';
 import Backdrop from '../../common/Backdrop';
 
-const mainControl = ({openMenu, closeMenu, open, menuList, backdrop, itemName, openName, closeName, name }) => (
+const mainControl = ({
+  openMenu, 
+  closeMenu, 
+  open, 
+  menuList, 
+  backdrop,
+  itemName, 
+  openName, 
+  closeName, 
+  name,
+  getItemName,
+  assignFuncToName
+}) => (
   <Container fluid>
     <Row>
       <Col className="fullscreen">
@@ -16,7 +28,9 @@ const mainControl = ({openMenu, closeMenu, open, menuList, backdrop, itemName, o
           open={open}
           openName={openName} 
           closeName={closeName} 
-          menuList={menuList} />
+          menuList={menuList}
+          getItemName={getItemName}
+          assignFuncToName={assignFuncToName} />
         <div className="ctrl__main pin circle" onMouseOver={openMenu} />
         <ItemName itemName={itemName} name={name} />
       </Col>

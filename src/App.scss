@@ -37,6 +37,8 @@ footer {
 	img {height: 30px;}
 }
 
+ul {list-style: none; padding: 0;}
+
 .fullscreen {
 	height: 100vh;
 	width: 100vh;
@@ -55,7 +57,7 @@ footer {
 
 .background--burst {
   height: 285px; width: 285px;
-  background: transparent;
+  background: rgba(245,245,245,0.5);
 }
 
 .backdrop {

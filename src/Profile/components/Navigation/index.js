@@ -3,16 +3,27 @@ import React, { Fragment } from 'react';
 import Hamburger from './Hamburger';
 import Search from './Search';
 import Logout from './Logout';
+import NavigationDrawer from './NavigationDrawer';
 
-const navigation = ({ hamburgerSwitch, open, searchSwitch, openSearch }) => (
+import '../../style/Navigation.css';
+
+const navigation = ({ 
+  hamburgerSwitch, 
+  searchSwitch, 
+  openSearch, 
+  menuList, 
+  openDrawer,
+  getItemName
+}) => (
   <Fragment>
     <Hamburger          
       hamburgerSwitch={hamburgerSwitch}
-      open={open} />
+      openDrawer={openDrawer} />
     <Search 
       searchSwitch={searchSwitch}
       openSearch={openSearch} />
     <Logout />
+    { openDrawer && (<NavigationDrawer menuList={menuList} getItemName={getItemName} />) }
   </Fragment>
 );
 
